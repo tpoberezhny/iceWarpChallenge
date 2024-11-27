@@ -11,7 +11,7 @@ const Header: React.FC<HeaderProps> = ({ icon, title, buttons }) => {
   return (
     <div className="header">
       <Icon icon={icon} />
-      <h2>{title}</h2>
+      <h2 className="title">{title}</h2>
       <ButtonGroup buttons={buttons} />
     </div>
   )
