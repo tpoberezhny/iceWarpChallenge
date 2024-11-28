@@ -1,50 +1,60 @@
-# React + TypeScript + Vite
+# Dialog Modal Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React-based dialog modal component created using **Vite**, **React**, **TypeScript**, and **SASS**. The component structure is modular and built from smaller reusable components, making it easy to extend and maintain.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Features](#features)
+  - [Show/Remove Borders Button](#showremove-borders-button)
+- [Running the Project](#running-the-project)
+- [Styling](#styling)
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Vite**.
+- **React**.
+- **TypeScript**.
+- **SASS**.
 
-- Configure the top-level `parserOptions` property like this:
+## Project Structure
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+The dialog modal component is divided into the following smaller components:
+
+1. **Icon**: Displays an icon in the header.
+2. **Button**: Customizable button component used throughout the modal.
+3. **ButtonGroup**: Groups multiple buttons together.
+4. **Header**: Contains the icon, title, and a group of buttons.
+5. **Content**: Main content area of the modal.
+6. **Footer**: Contains optional descriptive text and a group of buttons.
+
+The main **Dialog** component brings all these smaller components together, creating a fully functional modal dialog.
+
+## Features
+
+### Show/Remove Borders Button
+
+The dialog contains a **Show Borders/Remove Borders** button at the top. This button allows you to toggle borders on all elements within the dialog to visualize their structure and layout. This is particularly useful for development and debugging purposes.
+
+- **Show Borders**: Adds a thin border around all major components within the dialog to help visualize their layout.
+- **Remove Borders**: Hides the borders when they are no longer needed.
+
+## Running the Project
+
+To get started with this project, clone the repository and follow these commands:
+
+```sh
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+This will start a development server where you can see and interact with the dialog modal component.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Styling
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+The styles for the modal and its components are defined using **SASS** for modular, maintainable, and reusable styling. The `_dialog.scss` file contains all the necessary styling, including the positioning of the **Show Borders** button.
+
